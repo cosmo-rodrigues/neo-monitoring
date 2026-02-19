@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,9 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
   );
