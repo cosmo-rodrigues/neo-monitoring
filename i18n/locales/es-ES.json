@@ -1,0 +1,8 @@
+{
+  "header": {
+    "title": "Incidencias",
+    "subtitle": "Plataforma de monitoreo y gestion operacional"
+  },
+  "dateFormat": "dd/MM/yyyy HH:mm",
+  "dateFormatAt": "dd/MM/yyyy 'a las' HH:mm"
+}

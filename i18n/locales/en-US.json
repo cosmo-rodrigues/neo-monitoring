@@ -1,0 +1,8 @@
+{
+  "header": {
+    "title": "Tickets",
+    "subtitle": "Operational monitoring and management platform"
+  },
+  "dateFormat": "MM/dd/yyyy hh:mm a",
+  "dateFormatAt": "MM/dd/yyyy 'at' hh:mm a"
+}

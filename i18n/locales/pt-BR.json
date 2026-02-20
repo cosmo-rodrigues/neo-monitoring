@@ -1,0 +1,8 @@
+{
+  "header": {
+    "title": "Chamados",
+    "subtitle": "Plataforma de monitoramento e gestao operacional"
+  },
+  "dateFormat": "dd/MM/yyyy HH:mm",
+  "dateFormatAt": "dd/MM/yyyy 'as' HH:mm"
+}
