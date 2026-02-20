@@ -2,10 +2,11 @@ import type { ThemeConfig } from 'antd';
 
 const theme: ThemeConfig = {
     token: {
-        fontSize: 16,
-        colorPrimary: '#ec6725',
         borderRadius: 6,
+        colorInfo: "#ec6725",
+        colorPrimary: '#ec6725',
         fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        fontSize: 16,
     },
 };
 
