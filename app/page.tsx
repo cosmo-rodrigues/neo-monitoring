@@ -1,16 +1,21 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Layout, Typography } from "antd";
 
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { useTranslation } from '@/i18n/context';
+import { ViewMode, ViewToggle } from '@/components/view-toggle';
+import { Content } from 'antd/es/layout/layout';
+import { TechnicianView } from '@/components/technician-view';
+import { ManagerDashboard } from '@/components/manager-dashboard';
 
 const { Header } = Layout;
 const { Title } = Typography;
 
 const Home = () => {
   const { t, htmlLang } = useTranslation();
+  const [viewMode, setViewMode] = useState<ViewMode>("tecnico");
 
   useEffect(() => {
     document.documentElement.lang = htmlLang;
@@ -56,10 +61,14 @@ const Home = () => {
             </div>
           </div>
           <div className="flex items-center gap-3">
+            <ViewToggle value={viewMode} onChange={setViewMode} />
             <LanguageSwitcher />
           </div>
         </div>
       </Header>
+      <Content style={{ padding: "24px", maxWidth: 1400, width: "100%", margin: "0 auto" }}>
+        {viewMode === "tecnico" ? <TechnicianView /> : <ManagerDashboard />}
+      </Content>
     </Layout>
   )
 };
