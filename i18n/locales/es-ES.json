@@ -1,7 +1,110 @@
 {
   "header": {
     "title": "Incidencias",
-    "subtitle": "Plataforma de monitoreo y gestion operacional"
+    "subtitle": "Plataforma de monitoreo y gestión operacional"
+  },
+  "views": {
+    "technician": "Técnico",
+    "manager": "Gestor"
+  },
+  "filters": {
+    "searchPlaceholder": "Buscar por título...",
+    "statusPlaceholder": "Estado",
+    "priorityPlaceholder": "Prioridad",
+    "areaPlaceholder": "Área",
+    "clear": "Limpiar"
+  },
+  "table": {
+    "id": "ID",
+    "title": "Título",
+    "area": "Área",
+    "priority": "Prioridad",
+    "status": "Estado",
+    "location": "Ubicación",
+    "opened": "Apertura",
+    "assignee": "Responsable",
+    "unassigned": "No asignado",
+    "empty": "No se encontraron incidencias",
+    "paginationTotal": "{start}-{end} de {total} incidencias",
+    "errorTitle": "Error al cargar incidencias",
+    "errorSubtitle": "Se produjo un error al obtener los datos. Inténtelo de nuevo.",
+    "retry": "Reintentar"
+  },
+  "drawer": {
+    "title": "Detalles de la Incidencia",
+    "status": "Estado",
+    "priority": "Prioridad",
+    "area": "Área",
+    "equipment": "Equipo",
+    "location": "Ubicación",
+    "assignee": "Responsable",
+    "unassigned": "No asignado",
+    "opened": "Abierto el",
+    "lastUpdated": "Última actualización",
+    "description": "Descripción",
+    "timeline": "Cronología"
+  },
+  "form": {
+    "title": "Nueva Incidencia",
+    "titleLabel": "Título",
+    "titlePlaceholder": "Describa brevemente el problema",
+    "areaLabel": "Área",
+    "areaPlaceholder": "Seleccione el área",
+    "priorityLabel": "Prioridad",
+    "priorityPlaceholder": "Seleccione la prioridad",
+    "equipmentLabel": "Equipo",
+    "equipmentPlaceholder": "Nombre o código del equipo",
+    "descriptionLabel": "Descripción",
+    "descriptionPlaceholder": "Describa el problema en detalle",
+    "submit": "Crear Incidencia",
+    "cancel": "Cancelar",
+    "successMessage": "Incidencia creada con éxito!",
+    "errorMessage": "Error al crear incidencia. Inténtelo de nuevo.",
+    "validation": {
+      "titleMin": "El título debe tener al menos 5 caracteres",
+      "titleMax": "El título debe tener como máximo 200 caracteres",
+      "areaRequired": "Seleccione un área",
+      "priorityRequired": "Seleccione una prioridad",
+      "descriptionMin": "La descripción debe tener al menos 10 caracteres",
+      "descriptionMax": "La descripción debe tener como máximo 1000 caracteres",
+      "equipmentMin": "El equipo debe tener al menos 3 caracteres",
+      "equipmentMax": "El equipo debe tener como máximo 100 caracteres"
+    }
+  },
+  "newTicket": "Nueva Incidencia",
+  "dashboard": {
+    "totalTickets": "Total de Incidencias",
+    "open": "Abiertas",
+    "inProgress": "En Progreso",
+    "averageTime": "Tiempo Medio Abierto",
+    "daysSuffix": "días",
+    "ticketsByArea": "Incidencias por Área",
+    "ticketsByStatus": "Incidencias por Estado",
+    "ticketsByMonth": "Incidencias por Mes",
+    "tickets": "Incidencias",
+    "errorTitle": "Error al cargar indicadores",
+    "errorSubtitle": "Se produjo un error al obtener las estadísticas. Inténtelo de nuevo.",
+    "retry": "Reintentar"
+  },
+  "common": {
+    "status": {
+      "Aberto": "Abierto",
+      "Em andamento": "En progreso",
+      "Resolvido": "Resuelto",
+      "Cancelado": "Cancelado"
+    },
+    "priority": {
+      "Crítica": "Crítica",
+      "Alta": "Alta",
+      "Média": "Media",
+      "Baixa": "Baja"
+    },
+    "area": {
+      "Refrigeração": "Refrigeración",
+      "Energia": "Energía",
+      "Ar-condicionado": "Aire acondicionado",
+      "Água": "Agua"
+    }
   },
   "dateFormat": "dd/MM/yyyy HH:mm",
   "dateFormatAt": "dd/MM/yyyy 'a las' HH:mm"

@@ -3,6 +3,109 @@
     "title": "Tickets",
     "subtitle": "Operational monitoring and management platform"
   },
+  "views": {
+    "technician": "Technician",
+    "manager": "Manager"
+  },
+  "filters": {
+    "searchPlaceholder": "Search by title...",
+    "statusPlaceholder": "Status",
+    "priorityPlaceholder": "Priority",
+    "areaPlaceholder": "Area",
+    "clear": "Clear"
+  },
+  "table": {
+    "id": "ID",
+    "title": "Title",
+    "area": "Area",
+    "priority": "Priority",
+    "status": "Status",
+    "location": "Location",
+    "opened": "Opened",
+    "assignee": "Assignee",
+    "unassigned": "Unassigned",
+    "empty": "No tickets found",
+    "paginationTotal": "{start}-{end} of {total} tickets",
+    "errorTitle": "Error loading tickets",
+    "errorSubtitle": "An error occurred while fetching data. Please try again.",
+    "retry": "Retry"
+  },
+  "drawer": {
+    "title": "Ticket Details",
+    "status": "Status",
+    "priority": "Priority",
+    "area": "Area",
+    "equipment": "Equipment",
+    "location": "Location",
+    "assignee": "Assignee",
+    "unassigned": "Unassigned",
+    "opened": "Opened at",
+    "lastUpdated": "Last updated",
+    "description": "Description",
+    "timeline": "Timeline"
+  },
+  "form": {
+    "title": "New Ticket",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Briefly describe the issue",
+    "areaLabel": "Area",
+    "areaPlaceholder": "Select area",
+    "priorityLabel": "Priority",
+    "priorityPlaceholder": "Select priority",
+    "equipmentLabel": "Equipment",
+    "equipmentPlaceholder": "Equipment name or code",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Describe the issue in detail",
+    "submit": "Create Ticket",
+    "cancel": "Cancel",
+    "successMessage": "Ticket created successfully!",
+    "errorMessage": "Error creating ticket. Please try again.",
+    "validation": {
+      "titleMin": "Title must be at least 5 characters",
+      "titleMax": "Title must be at most 200 characters",
+      "areaRequired": "Select an area",
+      "priorityRequired": "Select a priority",
+      "descriptionMin": "Description must be at least 10 characters",
+      "descriptionMax": "Description must be at most 1000 characters",
+      "equipmentMin": "Equipment must be at least 3 characters",
+      "equipmentMax": "Equipment must be at most 100 characters"
+    }
+  },
+  "newTicket": "New Ticket",
+  "dashboard": {
+    "totalTickets": "Total Tickets",
+    "open": "Open",
+    "inProgress": "In Progress",
+    "averageTime": "Avg. Days Open",
+    "daysSuffix": "days",
+    "ticketsByArea": "Tickets by Area",
+    "ticketsByStatus": "Tickets by Status",
+    "ticketsByMonth": "Tickets by Month",
+    "tickets": "Tickets",
+    "errorTitle": "Error loading metrics",
+    "errorSubtitle": "An error occurred while fetching statistics. Please try again.",
+    "retry": "Retry"
+  },
+  "common": {
+    "status": {
+      "Aberto": "Open",
+      "Em andamento": "In Progress",
+      "Resolvido": "Resolved",
+      "Cancelado": "Cancelled"
+    },
+    "priority": {
+      "Crítica": "Critical",
+      "Alta": "High",
+      "Média": "Medium",
+      "Baixa": "Low"
+    },
+    "area": {
+      "Refrigeração": "Refrigeration",
+      "Energia": "Energy",
+      "Ar-condicionado": "Air Conditioning",
+      "Água": "Water"
+    }
+  },
   "dateFormat": "MM/dd/yyyy hh:mm a",
   "dateFormatAt": "MM/dd/yyyy 'at' hh:mm a"
 }

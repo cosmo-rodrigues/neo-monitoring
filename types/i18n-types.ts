@@ -13,10 +13,19 @@ export type NestedKeyOf<ObjectType extends object> = {
 
 export type TranslationKeys = NestedKeyOf<typeof ptBR>;
 
+// Tipos para keys dinâmicas (template literals)
+export type DynamicTranslationKey = 
+    | `common.area.${string}`
+    | `common.status.${string}`
+    | `common.priority.${string}`;
+
+// Union type que aceita chaves estáticas e dinâmicas
+export type TranslationKey = TranslationKeys | DynamicTranslationKey;
+
 export interface I18nContextValue {
     locale: SupportedLocale;
     setLocale: (locale: SupportedLocale) => void;
-    t: (key: TranslationKeys, params?: Record<string, string | number>) => string;
+    t: (key: TranslationKey, params?: Record<string, string | number>) => string;
     dateFnsLocale: DateFnsLocale;
     antLocale: AntLocale;
     htmlLang: string;

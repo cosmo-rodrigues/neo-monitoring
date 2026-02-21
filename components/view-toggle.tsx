@@ -4,7 +4,7 @@ import { Segmented } from "antd";
 import { ToolOutlined, DashboardOutlined } from "@ant-design/icons";
 import { useTranslation } from "@/i18n/context";
 
-export type ViewMode = "tecnico" | "gestor";
+export type ViewMode = "technical" | "manager";
 
 interface ViewToggleProps {
   value: ViewMode;
@@ -23,19 +23,19 @@ export function ViewToggle({ value, onChange }: ViewToggleProps) {
           label: (
             <span className="flex items-center gap-2 px-1">
               <ToolOutlined />
-              <span>{t("views.tecnico")}</span>
+              <span>{t("views.technician")}</span>
             </span>
           ),
-          value: "tecnico",
+          value: "technical",
         },
         {
           label: (
             <span className="flex items-center gap-2 px-1">
               <DashboardOutlined />
-              <span>{t("views.gestor")}</span>
+              <span>{t("views.manager")}</span>
             </span>
           ),
-          value: "gestor",
+          value: "manager",
         },
       ]}
       size="large"

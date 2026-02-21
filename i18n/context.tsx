@@ -24,7 +24,7 @@ import enUS from "./locales/en-US.json";
 import esES from "./locales/es-ES.json";
 
 import { getNestedValue, interpolate } from "@/helpers/get-nested-value";
-import { I18nContextValue, SupportedLocale } from "@/types/i18n-types";
+import { I18nContextValue, SupportedLocale, TranslationKey } from "@/types/i18n-types";
 
 type TranslationMap = typeof ptBR;
 
@@ -99,7 +99,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const t = useCallback(
-    (key: string, params?: Record<string, string | number>): string => {
+    (key: TranslationKey, params?: Record<string, string | number>): string => {
       const value =
         getNestedValue(TRANSLATIONS[locale] as unknown as Record<string, unknown>, key) ??
         getNestedValue(TRANSLATIONS["pt-BR"] as unknown as Record<string, unknown>, key) ??

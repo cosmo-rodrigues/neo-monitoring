@@ -15,7 +15,7 @@ const { Title } = Typography;
 
 const Home = () => {
   const { t, htmlLang } = useTranslation();
-  const [viewMode, setViewMode] = useState<ViewMode>("tecnico");
+  const [viewMode, setViewMode] = useState<ViewMode>("technical");
 
   useEffect(() => {
     document.documentElement.lang = htmlLang;
@@ -67,7 +67,7 @@ const Home = () => {
         </div>
       </Header>
       <Content style={{ padding: "24px", maxWidth: 1400, width: "100%", margin: "0 auto" }}>
-        {viewMode === "tecnico" ? <TechnicianView /> : <ManagerDashboard />}
+        {viewMode === "technical" ? <TechnicianView /> : <ManagerDashboard />}
       </Content>
     </Layout>
   )

@@ -1,8 +1,111 @@
 {
   "header": {
     "title": "Chamados",
-    "subtitle": "Plataforma de monitoramento e gestao operacional"
+    "subtitle": "Plataforma de monitoramento e gestão operacional"
+  },
+  "views": {
+    "technician": "Técnico",
+    "manager": "Gestor"
+  },
+  "filters": {
+    "searchPlaceholder": "Buscar por título...",
+    "statusPlaceholder": "Status",
+    "priorityPlaceholder": "Prioridade",
+    "areaPlaceholder": "Área",
+    "clear": "Limpar"
+  },
+  "table": {
+    "id": "ID",
+    "title": "Título",
+    "area": "Área",
+    "priority": "Prioridade",
+    "status": "Status",
+    "location": "Localização",
+    "opened": "Abertura",
+    "assignee": "Responsável",
+    "unassigned": "Não atribuído",
+    "empty": "Nenhum chamado encontrado",
+    "paginationTotal": "{start}-{end} de {total} chamados",
+    "errorTitle": "Erro ao carregar chamados",
+    "errorSubtitle": "Ocorreu um erro ao buscar os dados. Tente novamente.",
+    "retry": "Tentar novamente"
+  },
+  "drawer": {
+    "title": "Detalhes do Chamado",
+    "status": "Status",
+    "priority": "Prioridade",
+    "area": "Área",
+    "equipment": "Equipamento",
+    "location": "Localização",
+    "assignee": "Responsável",
+    "unassigned": "Não atribuído",
+    "opened": "Abertura",
+    "lastUpdated": "Última atualização",
+    "description": "Descrição",
+    "timeline": "Timeline"
+  },
+  "form": {
+    "title": "Novo Chamado",
+    "titleLabel": "Título",
+    "titlePlaceholder": "Descreva brevemente o problema",
+    "areaLabel": "Área",
+    "areaPlaceholder": "Selecione a área",
+    "priorityLabel": "Prioridade",
+    "priorityPlaceholder": "Selecione a prioridade",
+    "equipmentLabel": "Equipamento",
+    "equipmentPlaceholder": "Nome ou código do equipamento",
+    "descriptionLabel": "Descrição",
+    "descriptionPlaceholder": "Descreva o problema em detalhes",
+    "submit": "Criar Chamado",
+    "cancel": "Cancelar",
+    "successMessage": "Chamado criado com sucesso!",
+    "errorMessage": "Erro ao criar chamado. Tente novamente.",
+    "validation": {
+      "titleMin": "Título deve ter no mínimo 5 caracteres",
+      "titleMax": "Título deve ter no máximo 200 caracteres",
+      "areaRequired": "Selecione uma área",
+      "priorityRequired": "Selecione uma prioridade",
+      "descriptionMin": "Descrição deve ter no mínimo 10 caracteres",
+      "descriptionMax": "Descrição deve ter no máximo 1000 caracteres",
+      "equipmentMin": "Equipamento deve ter no mínimo 3 caracteres",
+      "equipmentMax": "Equipamento deve ter no máximo 100 caracteres"
+    }
+  },
+  "newTicket": "Novo Chamado",
+  "dashboard": {
+    "totalTickets": "Total de Chamados",
+    "open": "Abertos",
+    "inProgress": "Em Andamento",
+    "averageTime": "Tempo Médio Aberto",
+    "daysSuffix": "dias",
+    "ticketsByArea": "Chamados por Área",
+    "ticketsByStatus": "Chamados por Status",
+    "ticketsByMonth": "Chamados por Mês",
+    "tickets": "Chamados",
+    "errorTitle": "Erro ao carregar indicadores",
+    "errorSubtitle": "Ocorreu um erro ao buscar as estatísticas. Tente novamente.",
+    "retry": "Tentar novamente"
+  },
+  "common": {
+    "status": {
+      "Aberto": "Aberto",
+      "Em andamento": "Em andamento",
+      "Resolvido": "Resolvido",
+      "Cancelado": "Cancelado"
+    },
+    "priority": {
+      "Crítica": "Crítica",
+      "Alta": "Alta",
+      "Média": "Média",
+      "Baixa": "Baixa"
+    },
+    "area": {
+      "Refrigeração": "Refrigeração",
+      "Energia": "Energia",
+      "Ar-condicionado": "Ar-condicionado",
+      "Água": "Água"
+    }
   },
   "dateFormat": "dd/MM/yyyy HH:mm",
-  "dateFormatAt": "dd/MM/yyyy 'as' HH:mm"
+  "dateFormatAt": "dd/MM/yyyy 'às' HH:mm"
 }
