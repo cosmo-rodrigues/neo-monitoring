@@ -59,6 +59,7 @@ export function ChamadoDrawer({ chamadoId, open, onClose }: ChamadoDrawerProps) 
       onClose={onClose}
       width={560}
       styles={{ body: { paddingTop: 16 } }}
+      data-testid="chamado-drawer"
     >
       {isLoading && (
         <Skeleton active paragraph={{ rows: 8 }} />
@@ -142,6 +143,7 @@ export function ChamadoDrawer({ chamadoId, open, onClose }: ChamadoDrawerProps) 
                     </div>
                   ),
                 }))}
+                data-testid="chamado-timeline"
               />
             </>
           )}

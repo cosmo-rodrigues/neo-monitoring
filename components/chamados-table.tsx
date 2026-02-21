@@ -154,6 +154,7 @@ export function ChamadosTable({
       loading={loading}
       onChange={handleTableChange}
       scroll={{ x: 900 }}
+      data-testid="chamados-table"
       locale={{
         emptyText: (
           <Empty

@@ -90,6 +90,7 @@ export function ChamadoFormModal({ open, onClose }: ChamadoFormModalProps) {
         confirmLoading={createMutation.isPending}
         width={600}
         destroyOnHidden
+        data-testid="form-modal"
       >
         <form className="flex flex-col gap-4 pt-4">
           <Form.Item
@@ -107,6 +108,7 @@ export function ChamadoFormModal({ open, onClose }: ChamadoFormModalProps) {
                   {...field}
                   placeholder={t("form.titlePlaceholder")}
                   maxLength={200}
+                  data-testid="input-titulo"
                 />
               )}
             />
@@ -132,6 +134,7 @@ export function ChamadoFormModal({ open, onClose }: ChamadoFormModalProps) {
                       label: t(`common.area.${a}`),
                       value: a,
                     }))}
+                    data-testid="select-area"
                   />
                 )}
               />
@@ -156,6 +159,7 @@ export function ChamadoFormModal({ open, onClose }: ChamadoFormModalProps) {
                       label: t(`common.priority.${p}`),
                       value: p,
                     }))}
+                    data-testid="select-prioridade"
                   />
                 )}
               />
@@ -177,6 +181,7 @@ export function ChamadoFormModal({ open, onClose }: ChamadoFormModalProps) {
                   {...field}
                   placeholder={t("form.equipmentPlaceholder")}
                   maxLength={100}
+                  data-testid="input-equipamento"
                 />
               )}
             />
@@ -199,6 +204,7 @@ export function ChamadoFormModal({ open, onClose }: ChamadoFormModalProps) {
                   rows={4}
                   maxLength={1000}
                   showCount
+                  data-testid="input-descricao"
                 />
               )}
             />

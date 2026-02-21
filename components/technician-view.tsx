@@ -71,6 +71,7 @@ export function TechnicianView() {
           icon={<PlusOutlined />}
           onClick={() => setFormOpen(true)}
           size="large"
+          data-testid="btn-novo-chamado"
         >
           {t("newTicket")}
         </Button>

@@ -47,6 +47,7 @@ export function ChamadosFilters({
         onChange={(e) => onSearchChange(e.target.value)}
         allowClear
         style={{ width: 260 }}
+        data-testid="input-search"
       />
       <Select
         placeholder={t("filters.statusPlaceholder")}
@@ -54,6 +55,7 @@ export function ChamadosFilters({
         onChange={onStatusChange}
         allowClear
         style={{ width: 160 }}
+        data-testid="select-status-filter"
         options={STATUS_OPTIONS.map((s) => ({
           label: t(`common.status.${s}`),
           value: s,
@@ -65,6 +67,7 @@ export function ChamadosFilters({
         onChange={onPrioridadeChange}
         allowClear
         style={{ width: 140 }}
+        data-testid="select-priority-filter"
         options={PRIORIDADE_OPTIONS.map((p) => ({
           label: t(`common.priority.${p}`),
           value: p,
@@ -76,13 +79,14 @@ export function ChamadosFilters({
         onChange={onAreaChange}
         allowClear
         style={{ width: 170 }}
+        data-testid="select-area-filter"
         options={AREA_OPTIONS.map((a) => ({
           label: t(`common.area.${a}`),
           value: a,
         }))}
       />
       {hasFilters && (
-        <Button icon={<ClearOutlined />} onClick={onClear}>
+        <Button icon={<ClearOutlined />} onClick={onClear} data-testid="btn-clear-filters">
           {t("filters.clear")}
         </Button>
       )}

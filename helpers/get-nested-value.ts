@@ -1,4 +1,4 @@
-export function getNestedValue(obj: Record<string, unknown>, path: string): string | undefined {
+export function getNestedValue(obj: Record<string, unknown>, path: string): unknown {
     const parts = path.split(".");
     let current: unknown = obj;
     for (const part of parts) {
@@ -7,7 +7,7 @@ export function getNestedValue(obj: Record<string, unknown>, path: string): stri
         }
         current = (current as Record<string, unknown>)[part];
     }
-    return typeof current === "string" ? current : undefined;
+    return current;
 }
 
 export function interpolate(template: string, params: Record<string, string | number>): string {
