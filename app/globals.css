@@ -133,3 +133,48 @@ button, [type='button'], [type='reset'], [type='submit'] {
 .ant-table-wrapper .ant-table {
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
+
+/* Fixed table layout for technician view pagination */
+.ant-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ant-spin-nested-loading, .ant-spin-container {
+  height: 100%;
+  width: 100%;
+}
+
+.ant-spin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-table-wrapper .ant-table {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.ant-table-wrapper .ant-pagination {
+  align-self: flex-end;
+  flex-shrink: 0;
+  padding: 16px;
+  background-color: #fff;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .ant-table-wrapper .ant-pagination {
+    padding: 8;
+  }
+
+  .ant-table-wrapper .ant-pagination .ant-pagination-total-text {
+    display: none;
+  }
+  
+}

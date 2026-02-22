@@ -114,14 +114,14 @@ export function ChamadoFormModal({ open, onClose }: ChamadoFormModalProps) {
             />
           </Form.Item>
 
-          <div className="flex gap-4">
+          <div className="flex flex-col lg:flex-row gap-4 w-full">
             <Form.Item
               label={t("form.areaLabel")}
               validateStatus={errors.area ? "error" : ""}
               help={errors.area?.message}
               required
               layout="vertical"
-              className="flex-1"
+              className="flex-1 w-full"
             >
               <Controller
                 name="area"
@@ -146,7 +146,7 @@ export function ChamadoFormModal({ open, onClose }: ChamadoFormModalProps) {
               help={errors.prioridade?.message}
               required
               layout="vertical"
-              className="flex-1"
+              className="flex-1 w-full"
             >
               <Controller
                 name="prioridade"

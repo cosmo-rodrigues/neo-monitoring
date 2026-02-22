@@ -153,7 +153,7 @@ export function ChamadosTable({
       rowKey="id"
       loading={loading}
       onChange={handleTableChange}
-      scroll={{ x: 900 }}
+      scroll={{ x: 900, y: "calc(100vh - 320px)" }}
       data-testid="chamados-table"
       locale={{
         emptyText: (
@@ -175,12 +175,19 @@ export function ChamadosTable({
             end: range[1],
             total: totalCount,
           }),
+        position: ["bottomCenter"],
       }}
       onRow={(record) => ({
         onClick: () => onRowClick(record),
         style: { cursor: "pointer" },
       })}
       size="middle"
+      style={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+      }}
+      className="[&_*]:box-border [&_.ant-table]:flex [&_.ant-table]:flex-col [&_.ant-table-wrapper]:h-full [&_.ant-table-body]:flex-grow"
     />
   );
 }

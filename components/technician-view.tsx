@@ -45,8 +45,8 @@ export function TechnicianView() {
   }, [params.pageSize]);
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
+    <div className="flex flex-col gap-4 h-full justify-between">
+      <div className="flex flex-col items-center justify-between gap-3 shrink-0">
         <ChamadosFilters
           status={params.status}
           prioridade={params.prioridade}
@@ -72,23 +72,26 @@ export function TechnicianView() {
           onClick={() => setFormOpen(true)}
           size="large"
           data-testid="btn-novo-chamado"
+          className="w-full md:w-fit self-end"
         >
           {t("newTicket")}
         </Button>
       </div>
 
-      <ChamadosTable
-        data={data?.data ?? []}
-        total={data?.total ?? 0}
-        loading={isLoading}
-        isError={isError}
-        params={params}
-        onParamsChange={(updates) =>
-          setParams((prev) => ({ ...prev, ...updates }))
-        }
-        onRowClick={handleRowClick}
-        onRetry={() => refetch()}
-      />
+      <div className="grow overflow-hidden flex flex-col min-h-0 self-end w-full">
+        <ChamadosTable
+          data={data?.data ?? []}
+          total={data?.total ?? 0}
+          loading={isLoading}
+          isError={isError}
+          params={params}
+          onParamsChange={(updates) =>
+            setParams((prev) => ({ ...prev, ...updates }))
+          }
+          onRowClick={handleRowClick}
+          onRetry={() => refetch()}
+        />
+      </div>
 
       <ChamadoDrawer
         chamadoId={selectedId}
