@@ -96,7 +96,6 @@ export function ChamadosTable({
       key: "instalacao",
       width: 160,
       ellipsis: true,
-      responsive: ["lg"],
     },
     {
       title: t("table.opened"),
@@ -115,7 +114,6 @@ export function ChamadosTable({
       key: "responsavel",
       width: 140,
       ellipsis: true,
-      responsive: ["xl"],
       render: (responsavel: string | null) => (
         <span className={responsavel ? "" : "text-gray-400 italic"}>
           {responsavel ?? t("table.unassigned")}
@@ -153,7 +151,7 @@ export function ChamadosTable({
       rowKey="id"
       loading={loading}
       onChange={handleTableChange}
-      scroll={{ x: 'hidden', y: "calc(100vh - 400px)" }}
+      scroll={{ x: 1300, y: "calc(100vh - 330px)" }}
       data-testid="chamados-table"
       locale={{
         emptyText: (

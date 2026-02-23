@@ -59,7 +59,7 @@ export function ChamadosFilters({
           label: t(`common.status.${s}`),
           value: s,
         }))}
-        className="w-full md:w-fit"
+        className="w-full md:min-w-45 md:w-fit"
       />
       <Select
         placeholder={t("filters.priorityPlaceholder")}
@@ -71,7 +71,7 @@ export function ChamadosFilters({
           label: t(`common.priority.${p}`),
           value: p,
         }))}
-        className="w-full md:w-fit"
+        className="w-full md:min-w-45 md:w-fit"
       />
       <Select
         placeholder={t("filters.areaPlaceholder")}
@@ -83,11 +83,11 @@ export function ChamadosFilters({
           label: t(`common.area.${a}`),
           value: a,
         }))}
-        className="w-full md:w-fit"
+        className="w-full md:min-w-45 md:w-fit"
       />
       {hasFilters && (
         <Button
-          className="w-full md:w-fit"
+          className="w-full md:min-w-45 md:w-fit"
           icon={<ClearOutlined />}
           onClick={onClear}
           data-testid="btn-clear-filters">

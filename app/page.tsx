@@ -1,5 +1,6 @@
 "use client";
 
+import '@ant-design/v5-patch-for-react-19';
 import { useEffect, useState } from 'react';
 import { Layout, Typography } from "antd";
 import theme from '@/components/theme/theme-config';
@@ -40,8 +41,8 @@ const Home = () => {
             right: 0,
           }}
         >
-          <div className="flex flex-wrap items-center justify-between gap-4 py-4 w-full mx-auto max-w-350">
-            <div className="hidden sm:flex items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center md:justify-between gap-4 py-4 w-full mx-auto max-w-350">
+            <div className="hidden sm:flex items-center md:gap-3">
               <div
                 className='hidden sm:flex self-center font-bold text-2xl text-[#ec6725] bg-white dark:bg-white rounded px-2 py-1'
               >
@@ -56,7 +57,7 @@ const Home = () => {
                 </span>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center">
               <ViewToggle value={viewMode} onChange={setViewMode} />
               <div className="hidden md:flex">
                 <LanguageSwitcher />
@@ -66,7 +67,7 @@ const Home = () => {
         </Header>
       </div>
       <Content
-        className='px-6 xl:px-0 py-5'
+        className='px-6 xl:px-0 py-5 mx-auto max-w-350'
         style={{
           maxWidth: 1400,
           width: "100%",

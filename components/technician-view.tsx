@@ -72,13 +72,13 @@ export function TechnicianView() {
           onClick={() => setFormOpen(true)}
           size="large"
           data-testid="btn-novo-chamado"
-          className="w-full md:w-fit self-end"
+          className="w-full md:w-fit self-start"
         >
           {t("newTicket")}
         </Button>
       </div>
 
-      <div className="grow overflow-hidden flex flex-col min-h-0 self-end w-full">
+      <div className="flex flex-col h-full min-h-[75vh] w-full">
         <ChamadosTable
           data={data?.data ?? []}
           total={data?.total ?? 0}

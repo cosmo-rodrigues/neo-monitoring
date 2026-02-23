@@ -49,7 +49,7 @@ export function ChamadoDrawer({ chamadoId, open, onClose }: ChamadoDrawerProps) 
         chamado ? (
           <div className="flex items-center gap-2">
             <span className="font-mono text-sm text-gray-500">#{chamado.id}</span>
-            <span className="truncate">{chamado.titulo}</span>
+            <span className="w-full text-wrap truncate">{chamado.titulo}</span>
           </div>
         ) : (
           t("drawer.title")
