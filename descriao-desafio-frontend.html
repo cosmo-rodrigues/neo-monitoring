@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste Técnico — Dev Frontend (Next.js/React)</title>
+  <style>
+    :root {
+      --primary: #ec6725;
+      --text: #1f2937;
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    h1 {
+      color: var(--primary);
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 10px;
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+    h2 {
+      color: #374151;
+      margin-top: 32px;
+      border-left: 4px solid var(--primary);
+      padding-left: 10px;
+    }
+    h3 {
+      color: #4b5563;
+      margin-top: 20px;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    strong {
+      color: #111827;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    code {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    pre {
+      background: #1f2937;
+      color: #e5e7eb;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.82em;
+      line-height: 1.5;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.8em;
+      font-weight: 600;
+    }
+    .badge-obrig { background: #fef2f2; color: #991b1b; }
+    .badge-bonus { background: #f0fdf4; color: #166534; }
+    table.rubric {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+    table.rubric th, table.rubric td {
+      border: 1px solid #e5e7eb;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    table.rubric th {
+      background: #f9fafb;
+      font-weight: 600;
+    }
+    table.rubric td:last-child {
+      text-align: center;
+      width: 60px;
+    }
+    .info-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+    }
+    .info-box strong { color: #92400e; }
+    .context-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+    }
+    .context-box strong { color: #1e40af; }
+    @media (max-width: 600px) {
+      .container { padding: 20px; }
+      pre { font-size: 0.75em; }
+    }
+    .brand-logo {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 16px;
+    }
+    .brand-logo img {
+      display: block;
+      height: auto;
+      max-width: min(132px, 42vw);
+    }
+    .copy-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      margin-bottom: 8px;
+      transition: opacity 0.2s;
+    }
+    .copy-btn:hover { opacity: 0.9; }
+    .copy-btn:active { transform: translateY(1px); }
+  </style>
+</head>
+<body>
+  <div class="brand-logo">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsH7gXhm6b16YMtZPBv0MfDnDOJsi9O--DCw&s" alt="Logo Neoestech" loading="lazy" />
+  </div>
+
+  <main class="container">
+    <h1>Teste Técnico — Dev Frontend (Next.js / React)</h1>
+    <p>
+      <strong>Prazo:</strong> 3 dias úteis a partir do recebimento.<br>
+      <strong>Entrega:</strong> link do repositório público no GitHub.<br>
+      <strong>Diferencial:</strong> Link de deploy (Vercel/Netlify).
+    </p>
+
+    <div class="context-box">
+      <strong>Contexto:</strong> O <strong>NEO</strong> é a plataforma de monitoramento e gestão operacional da Estech.
+      Ele monitora equipamentos (refrigeração, energia, ar-condicionado) em tempo real, gera chamados automáticos
+      quando detecta anomalias e fornece dashboards para operação e gestão. Seu teste simula um módulo real dessa plataforma.
+    </div>
+
+    <!-- ================================================ -->
+    <!-- PARTE 1 — PRÁTICO (70%)                          -->
+    <!-- ================================================ -->
+    <h2>Parte 1 — Projeto prático (70% da nota)</h2>
+    <p>Construir um módulo <strong>"Chamados"</strong> com duas visões, usando os dados mock fornecidos abaixo.</p>
+
+    <h3>Stack obrigatória</h3>
+    <ul>
+      <li><strong>Next.js 14+</strong> (App Router)</li>
+      <li><strong>TypeScript</strong> (tipagem estrita, sem <code>any</code>)</li>
+      <li><strong>Ant Design</strong> (biblioteca de componentes base)</li>
+      <li><strong>React Query (TanStack Query)</strong> para gerenciar dados assíncronos</li>
+    </ul>
+
+    <h3>Requisitos</h3>
+    <ol>
+      <li>
+        <span class="badge badge-obrig">obrigatório</span>
+        <strong>Identidade Visual:</strong> Use o <code>ConfigProvider</code> do Ant Design para customizar a cor primária (Primary Color) para o laranja da marca: <code>#ec6725</code>.
+      </li>
+      <li>
+        <span class="badge badge-obrig">obrigatório</span>
+        <strong>Lista de chamados:</strong> tabela com paginação server-side (simule com os mock data),
+        filtros por <em>status</em>, <em>prioridade</em> e <em>área</em>, busca textual por título e ordenação
+        por data de abertura e prioridade.
+      </li>
+      <li>
+        <span class="badge badge-obrig">obrigatório</span>
+        <strong>Volume:</strong> a lista deve lidar com 1.000+ itens sem travar a UI.
+        Gere os dados extras programaticamente (dica: use <code>@faker-js/faker</code>).
+        Descreva no README a estratégia adotada (virtualização, paginação, lazy loading, etc.).
+      </li>
+      <li>
+        <span class="badge badge-obrig">obrigatório</span>
+        <strong>Drawer de detalhe:</strong> ao clicar em um chamado, abre um drawer lateral com
+        todas as informações do item + timeline de atualizações.
+      </li>
+      <li>
+        <span class="badge badge-obrig">obrigatório</span>
+        <strong>Formulário "Novo chamado":</strong> modal ou página com campos
+        (título, área, prioridade, descrição, equipamento). Validação com
+        <strong>React Hook Form + Zod</strong>. Ao submeter, o novo chamado aparece na lista.
+      </li>
+      <li>
+        <span class="badge badge-obrig">obrigatório</span>
+        <strong>Duas visões (toggle):</strong>
+        <ul>
+          <li><em>Técnico</em> — foco na lista de chamados e ações operacionais.</li>
+          <li><em>Gestor</em> — foco em indicadores: chamados por área, por status, tempo médio aberto.
+            Pelo menos 1 gráfico (Recharts, Chart.js ou equivalente).</li>
+        </ul>
+      </li>
+      <li>
+        <span class="badge badge-obrig">obrigatório</span>
+        <strong>Estados:</strong> loading skeleton, empty state, error com botão de retry.
+      </li>
+      <li>
+        <span class="badge badge-obrig">obrigatório</span>
+        <strong>Componentes reutilizáveis:</strong> no mínimo 3 componentes
+        extraídos e reutilizados (ex: <code>StatusBadge</code>, <code>PriorityTag</code>,
+        <code>DataTable</code>, <code>DrawerDetail</code>, <code>StatCard</code>).
+      </li>
+      <li>
+        <span class="badge badge-obrig">obrigatório</span>
+        <strong>README:</strong> curto e objetivo —
+        <ul>
+          <li>Como rodar o projeto</li>
+          <li>2 decisões de arquitetura/UX justificadas</li>
+          <li>O que você faria diferente com mais tempo</li>
+        </ul>
+      </li>
+      <li>
+        <span class="badge badge-bonus">bônus</span>
+        <strong>Deploy:</strong> disponibilizar um link do projeto rodando (Vercel, Netlify, etc.).
+      </li>
+      <li>
+        <span class="badge badge-bonus">bônus</span>
+        <strong>Testes:</strong> pelo menos 1 teste unitário (Jest/Vitest) e 1 teste e2e (Cypress/Playwright)
+        cobrindo filtro ou ordenação.
+      </li>
+      <li>
+        <span class="badge badge-bonus">bônus</span>
+        <strong>Responsividade:</strong> funciona bem em tela de celular (técnico em campo).
+      </li>
+    </ol>
+
+    <div class="info-box">
+      <strong>Dica:</strong> Não precisa de backend real. Simule as chamadas com
+      funções assíncronas (<code>async/await</code> + <code>setTimeout</code>) encapsuladas
+      em hooks do React Query. Para gerar o volume de 1.000+ itens, recomendamos bibliotecas como <code>@faker-js/faker</code>.
+    </div>
+
+    <!-- ================================================ -->
+    <!-- DADOS MOCK                                       -->
+    <!-- ================================================ -->
+    <h3>Dados mock (use como semente)</h3>
+    <p>Copie o JSON abaixo para um arquivo <code>src/mocks/chamados.json</code>.</p>
+    <button class="copy-btn" onclick="copyMockJson()">Copiar JSON</button>
+    <pre id="mockJson">[
+  {
+    "id": 1001,
+    "titulo": "Compressor com temperatura acima do limite",
+    "area": "Refrigeração",
+    "prioridade": "Crítica",
+    "status": "Aberto",
+    "equipamento": "Compressor Bitzer 4TCS-8.2",
+    "instalacao": "Loja Centro - SP",
+    "abertura": "2026-02-10T08:30:00Z",
+    "ultimaAtualizacao": "2026-02-10T14:22:00Z",
+    "descricao": "Temperatura do compressor atingiu 92°C (limite: 85°C). Risco de parada.",
+    "responsavel": "Carlos Silva"
+  },
+  {
+    "id": 1002,
+    "titulo": "Queda de tensão na rede elétrica principal",
+    "area": "Energia",
+    "prioridade": "Alta",
+    "status": "Em andamento",
+    "equipamento": "Quadro Elétrico QD-01",
+    "instalacao": "CD Logístico - RJ",
+    "abertura": "2026-02-09T11:15:00Z",
+    "ultimaAtualizacao": "2026-02-10T09:00:00Z",
+    "descricao": "Tensão caiu para 198V (nominal: 220V). Equipamentos de refrigeração operando em limite.",
+    "responsavel": "Ana Costa"
+  },
+  {
+    "id": 1003,
+    "titulo": "Ar-condicionado da sala de servidores desligou",
+    "area": "Ar-condicionado",
+    "prioridade": "Crítica",
+    "status": "Aberto",
+    "equipamento": "Split Inverter 60k BTU",
+    "instalacao": "Escritório Sede - SP",
+    "abertura": "2026-02-10T16:45:00Z",
+    "ultimaAtualizacao": "2026-02-10T16:45:00Z",
+    "descricao": "AC desligou e temperatura da sala subiu para 31°C. Servidores em risco.",
+    "responsavel": null
+  },
+  {
+    "id": 1004,
+    "titulo": "Sensor de temperatura offline há 2h",
+    "area": "Refrigeração",
+    "prioridade": "Média",
+    "status": "Aberto",
+    "equipamento": "Sensor PT100 #347",
+    "instalacao": "Loja Norte - AM",
+    "abertura": "2026-02-10T06:00:00Z",
+    "ultimaAtualizacao": "2026-02-10T08:10:00Z",
+    "descricao": "Sensor parou de enviar dados. Último valor: 2.3°C. Pode ser falha de conectividade.",
+    "responsavel": "Roberto Lima"
+  },
+  {
+    "id": 1005,
+    "titulo": "Vazamento de gás refrigerante detectado",
+    "area": "Refrigeração",
+    "prioridade": "Crítica",
+    "status": "Em andamento",
+    "equipamento": "Rack de Refrigeração #12",
+    "instalacao": "Loja Sul - PR",
+    "abertura": "2026-02-08T14:20:00Z",
+    "ultimaAtualizacao": "2026-02-10T11:30:00Z",
+    "descricao": "Pressão do sistema caiu 15% em 24h. Técnico acionado para inspeção.",
+    "responsavel": "Marcos Oliveira"
+  },
+  {
+    "id": 1006,
+    "titulo": "Iluminação do setor de FLV piscando",
+    "area": "Energia",
+    "prioridade": "Baixa",
+    "status": "Aberto",
+    "equipamento": "Painel LED FLV-02",
+    "instalacao": "Loja Centro - SP",
+    "abertura": "2026-02-10T10:00:00Z",
+    "ultimaAtualizacao": "2026-02-10T10:00:00Z",
+    "descricao": "Lâmpadas LED do setor de frutas piscando intermitentemente. Sem impacto operacional imediato.",
+    "responsavel": null
+  },
+  {
+    "id": 1007,
+    "titulo": "Nobreak com bateria fraca",
+    "area": "Energia",
+    "prioridade": "Alta",
+    "status": "Resolvido",
+    "equipamento": "Nobreak APC 3kVA",
+    "instalacao": "Escritório Sede - SP",
+    "abertura": "2026-02-07T09:30:00Z",
+    "ultimaAtualizacao": "2026-02-09T16:00:00Z",
+    "descricao": "Autonomia do nobreak caiu para 3 min (esperado: 15 min). Bateria substituída.",
+    "responsavel": "Ana Costa"
+  },
+  {
+    "id": 1008,
+    "titulo": "Porta da câmara fria não vedando corretamente",
+    "area": "Refrigeração",
+    "prioridade": "Alta",
+    "status": "Em andamento",
+    "equipamento": "Câmara Fria #03",
+    "instalacao": "CD Logístico - RJ",
+    "abertura": "2026-02-09T07:45:00Z",
+    "ultimaAtualizacao": "2026-02-10T13:00:00Z",
+    "descricao": "Borracha de vedação danificada. Temperatura interna subindo 0.5°C/hora acima do normal.",
+    "responsavel": "Carlos Silva"
+  },
+  {
+    "id": 1009,
+    "titulo": "Consumo de energia 20% acima da média",
+    "area": "Energia",
+    "prioridade": "Média",
+    "status": "Aberto",
+    "equipamento": "Medidor Geral Loja",
+    "instalacao": "Loja Oeste - MG",
+    "abertura": "2026-02-10T07:00:00Z",
+    "ultimaAtualizacao": "2026-02-10T07:00:00Z",
+    "descricao": "Consumo médio das últimas 24h ficou 20% acima do padrão histórico. Investigar causa.",
+    "responsavel": null
+  },
+  {
+    "id": 1010,
+    "titulo": "Falha no controlador do balcão refrigerado",
+    "area": "Refrigeração",
+    "prioridade": "Alta",
+    "status": "Resolvido",
+    "equipamento": "Controlador Carel pCO5 #89",
+    "instalacao": "Loja Norte - AM",
+    "abertura": "2026-02-06T13:00:00Z",
+    "ultimaAtualizacao": "2026-02-08T18:00:00Z",
+    "descricao": "Controlador travou e parou de regular temperatura. Reset manual realizado e firmware atualizado.",
+    "responsavel": "Roberto Lima"
+  },
+  {
+    "id": 1011,
+    "titulo": "Condensador com acúmulo de sujeira",
+    "area": "Ar-condicionado",
+    "prioridade": "Baixa",
+    "status": "Aberto",
+    "equipamento": "Condensadora VRF Daikin",
+    "instalacao": "Escritório Sede - SP",
+    "abertura": "2026-02-10T09:20:00Z",
+    "ultimaAtualizacao": "2026-02-10T09:20:00Z",
+    "descricao": "Manutenção preventiva identificou acúmulo de sujeira no condensador. Agendar limpeza.",
+    "responsavel": null
+  },
+  {
+    "id": 1012,
+    "titulo": "Alarme de porta aberta da câmara por 15 min",
+    "area": "Refrigeração",
+    "prioridade": "Média",
+    "status": "Resolvido",
+    "equipamento": "Câmara Fria #01",
+    "instalacao": "Loja Sul - PR",
+    "abertura": "2026-02-09T19:30:00Z",
+    "ultimaAtualizacao": "2026-02-09T20:00:00Z",
+    "descricao": "Sensor de porta indicou abertura por 15 minutos. Equipe notificada, porta fechada.",
+    "responsavel": "Marcos Oliveira"
+  }
+]</pre>
+
+    <p><strong>Enums para geração de dados:</strong></p>
+    <pre>status:     ["Aberto", "Em andamento", "Resolvido", "Cancelado"]
+prioridade: ["Crítica", "Alta", "Média", "Baixa"]
+area:       ["Refrigeração", "Energia", "Ar-condicionado", "Água"]</pre>
+
+    <!-- ================================================ -->
+    <!-- PARTE 2 — CONCEITUAL (30%)                       -->
+    <!-- ================================================ -->
+    <h2>Parte 2 — Perguntas conceituais (30% da nota)</h2>
+    <p>Responda no próprio README do projeto, na seção "Respostas conceituais". Seja direto — 5 a 10 linhas por resposta.</p>
+
+    <ol>
+      <li>
+        <strong>Cache e mutação:</strong> Você tem a lista de chamados carregada via React Query com filtros ativos
+        (status = "Aberto", área = "Refrigeração"). O usuário cria um novo chamado pelo formulário.
+        Como você garante que a lista reflita o novo item imediatamente, sem refetch completo de todos os filtros?
+        Descreva sua estratégia (optimistic update, invalidação seletiva, ou outra).
+      </li>
+      <li>
+        <strong>Performance:</strong> Uma tabela de equipamentos com 5.000 linhas e 15 colunas está demorando 3 segundos
+        para renderizar e trava ao filtrar. O usuário é um técnico de campo usando celular Android médio.
+        Descreva, em ordem de prioridade, as abordagens que você aplicaria para resolver.
+      </li>
+      <li>
+        <strong>Arquitetura de componentes:</strong> Você criou um <code>&lt;StatusBadge /&gt;</code> usado em
+        4 telas diferentes. Em uma tela ele precisa exibir um tooltip, em outra precisa abrir um dropdown ao clicar,
+        e em uma terceira é apenas visual. Como você projeta esse componente para ser reutilizável
+        sem virar um "mega-componente" cheio de props condicionais?
+      </li>
+    </ol>
+
+    <!-- ================================================ -->
+    <!-- RUBRICA                                          -->
+    <!-- ================================================ -->
+    <h2>Rubrica de avaliação</h2>
+    <table class="rubric">
+      <thead>
+        <tr>
+          <th>Critério</th>
+          <th>O que observamos</th>
+          <th>Peso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Componentização e reuso</strong></td>
+          <td>Componentes extraídos, tipados, com responsabilidade clara</td>
+          <td>15%</td>
+        </tr>
+        <tr>
+          <td><strong>Identidade Visual</strong></td>
+          <td>Uso correto do <code>ConfigProvider</code> para customização do Ant Design</td>
+          <td>10%</td>
+        </tr>
+        <tr>
+          <td><strong>Tratamento de estados</strong></td>
+          <td>Loading, empty, error + retry implementados de forma consistente</td>
+          <td>15%</td>
+        </tr>
+        <tr>
+          <td><strong>Performance em volume</strong></td>
+          <td>Estratégia para 1.000+ itens, sem travamentos</td>
+          <td>10%</td>
+        </tr>
+        <tr>
+          <td><strong>Qualidade do código</strong></td>
+          <td>TypeScript estrito, organização de pastas, nomes claros, sem <code>any</code></td>
+          <td>15%</td>
+        </tr>
+        <tr>
+          <td><strong>Formulário e validação</strong></td>
+          <td>React Hook Form + Zod, feedback de erro inline, UX do form</td>
+          <td>10%</td>
+        </tr>
+        <tr>
+          <td><strong>Respostas conceituais</strong></td>
+          <td>Profundidade, clareza e aplicabilidade das respostas</td>
+          <td>15%</td>
+        </tr>
+        <tr>
+          <td><strong>README e decisões</strong></td>
+          <td>Justificativas de UX/arquitetura, clareza, "o que faria com mais tempo"</td>
+          <td>10%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>Importante:</strong> Valorizamos código que parece escrito por um humano que
+      entende o problema, não por um prompt genérico. Se usar IA como ferramenta, use-a bem — queremos ver
+      <em>suas</em> decisões de arquitetura e UX, não output padrão.
+    </div>
+
+    <p style="margin-top: 32px; color: #6b7280; font-size: 0.9em;">
+      Boa sorte! Qualquer dúvida, fale com o RH Estech.
+    </p>
+  </main>
+
+  <script>
+    function copyMockJson() {
+      const jsonText = document.getElementById('mockJson').innerText;
+      navigator.clipboard.writeText(jsonText).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        const originalText = btn.innerText;
+        btn.innerText = 'Copiado!';
+        btn.style.background = '#166534';
+        setTimeout(() => {
+          btn.innerText = originalText;
+          btn.style.background = '#ec6725';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
