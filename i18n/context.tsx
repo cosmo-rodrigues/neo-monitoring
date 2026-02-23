@@ -65,11 +65,18 @@ const I18nContext = createContext<I18nContextValue | null>(null);
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<SupportedLocale>("pt-BR");
 
-  function detectBrowserLocale(): SupportedLocale {
-    const browserLang = navigator.language;
+  function detectSystemLocale(): SupportedLocale {
+    if (typeof navigator === "undefined") return "pt-BR";
 
-    if (browserLang.startsWith("pt")) return "pt-BR";
-    if (browserLang.startsWith("es")) return "es-ES";
+    const rawLocale =
+      (navigator.languages && navigator.languages[0]) ||
+      (navigator as any).language ||
+      (typeof Intl !== "undefined" && Intl.DateTimeFormat().resolvedOptions().locale) ||
+      "pt-BR";
+
+    const locale = String(rawLocale).toLowerCase();
+    if (locale.startsWith("pt")) return "pt-BR";
+    if (locale.startsWith("es")) return "es-ES";
     return "en-US";
   }
 
@@ -82,8 +89,8 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     if (stored && TRANSLATIONS[stored]) {
       setLocaleState(stored);
     } else {
-      const browserLocale = detectBrowserLocale();
-      setLocaleState(browserLocale);
+      const systemLocale = detectSystemLocale();
+      setLocaleState(systemLocale);
     }
   }, []);
 
@@ -100,10 +107,11 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   const t = useCallback(
     (key: TranslationKey, params?: Record<string, string | number>): string => {
-      const value =
+      const raw =
         getNestedValue(TRANSLATIONS[locale] as unknown as Record<string, unknown>, key) ??
         getNestedValue(TRANSLATIONS["pt-BR"] as unknown as Record<string, unknown>, key) ??
         key;
+      const value = typeof raw === "string" ? raw : String(raw);
       return params ? interpolate(value, params) : value;
     },
     [locale]
