@@ -66,7 +66,7 @@ src/
 - ✅ **Internacionalização** — Suporte PT-BR, EN-US, ES-ES com chaves em camelCase
 
 ### Bônus
-- ✅ **Deploy** — Link do projeto deployad https://neo-monitoring-pink.vercel.app/
+- ✅ **Deploy** — Link do projeto deployad https://neo-monitoring-three.vercel.app/
 - 🔲 **Testes** — Estrutura pronta, exemplos básicos podem ser adicionados
 - ✅ **Responsividade** — Mobile-first, funciona bem em celulares
 
