@@ -119,13 +119,17 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
 /* Prevent Tailwind preflight from resetting Ant Design button styles */
-button, [type='button'], [type='reset'], [type='submit'] {
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
   background-color: unset;
 }
 
@@ -141,7 +145,8 @@ button, [type='button'], [type='reset'], [type='submit'] {
   height: 100%;
 }
 
-.ant-spin-nested-loading, .ant-spin-container {
+.ant-spin-nested-loading,
+.ant-spin-container {
   height: 100%;
   width: 100%;
 }
@@ -168,6 +173,12 @@ button, [type='button'], [type='reset'], [type='submit'] {
   margin-top: 0;
 }
 
+.ant-table {
+  overflow: hidden !important;
+  padding-bottom: 100px;
+  margin-bottom: -100px;
+}
+
 @media screen and (max-width: 768px) {
   .ant-table-wrapper .ant-pagination {
     padding: 8;
@@ -176,5 +187,5 @@ button, [type='button'], [type='reset'], [type='submit'] {
   .ant-table-wrapper .ant-pagination .ant-pagination-total-text {
     display: none;
   }
-  
+
 }

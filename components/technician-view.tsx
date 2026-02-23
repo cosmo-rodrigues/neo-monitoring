@@ -45,8 +45,8 @@ export function TechnicianView() {
   }, [params.pageSize]);
 
   return (
-    <div className="flex flex-col gap-4 h-full justify-between">
-      <div className="flex flex-col items-center justify-between gap-3 shrink-0">
+    <div className="flex flex-col gap-4 h-full justify-between w-full">
+      <div className="flex flex-col items-center justify-between gap-3 shrink-0 w-full">
         <ChamadosFilters
           status={params.status}
           prioridade={params.prioridade}

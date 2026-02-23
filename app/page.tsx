@@ -25,9 +25,9 @@ const Home = () => {
 
   return (
     <Layout className='h-full w-full'>
-      <div className='w-full bg-[#ec6725]'>
+      <div className='h-fit w-full bg-[#ec6725]'>
         <Header
-          className='mx-auto'
+          className='w-full mx-auto'
           style={{
             background: PRIMARY_COLOR,
             borderBottom: `1px solid ${PRIMARY_COLOR}`,
@@ -38,14 +38,12 @@ const Home = () => {
             top: 0,
             left: 0,
             right: 0,
-            maxWidth: 1400,
-            width: "100%",
           }}
         >
-          <div className="flex flex-wrap items-center justify-between gap-4 py-4 w-full">
+          <div className="flex flex-wrap items-center justify-between gap-4 py-4 w-full mx-auto max-w-350">
             <div className="hidden sm:flex items-center gap-3">
               <div
-                className='hidden sm:flex self-center font-bold text-2xl'
+                className='hidden sm:flex self-center font-bold text-2xl text-[#ec6725] bg-white dark:bg-white rounded px-2 py-1'
               >
                 NEO
               </div>
@@ -67,17 +65,19 @@ const Home = () => {
           </div>
         </Header>
       </div>
-      <Content style={{
-        padding: "24px",
-        maxWidth: 1400,
-        width: "100%",
-        margin: "0 auto",
-        marginTop: "100px",
-        height: "calc(100vh - 100px)",
-        overflowY: "auto",
-        display: "flex",
-        flexDirection: "column",
-      }}>
+      <Content
+        className='px-6 xl:px-0 py-5'
+        style={{
+          maxWidth: 1400,
+          width: "100%",
+          margin: "0 auto",
+          marginTop: "100px",
+          height: "calc(100vh - 100px)",
+          overflowY: "auto",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         {viewMode === "technical" ? <TechnicianView /> : <ManagerDashboard />}
       </Content>
     </Layout>
