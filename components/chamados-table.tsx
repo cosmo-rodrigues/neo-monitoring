@@ -151,7 +151,7 @@ export function ChamadosTable({
       rowKey="id"
       loading={loading}
       onChange={handleTableChange}
-      scroll={{ x: 1300, y: "calc(100vh - 330px)" }}
+      scroll={{ x: 1300, y: "calc(100vh - 370px)" }}
       data-testid="chamados-table"
       locale={{
         emptyText: (
